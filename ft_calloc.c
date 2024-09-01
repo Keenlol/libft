@@ -6,14 +6,13 @@
 /*   By: ctongpa <ctongpa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 13:04:59 by ctongpa           #+#    #+#             */
-/*   Updated: 2024/08/29 13:04:59 by ctongpa          ###   ########.fr       */
+/*   Updated: 2024/09/01 16:51:40 by ctongpa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-void *ft_calloc(size_t count, size_t size)
+void	*ft_calloc(size_t count, size_t size)
 {
 	char	*tmp;
 	size_t	i;

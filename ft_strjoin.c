@@ -1,31 +1,42 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ctongpa <ctongpa@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/01 16:59:22 by ctongpa           #+#    #+#             */
+/*   Updated: 2024/09/01 16:59:24 by ctongpa          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strjoin(const char *s1, const char *s2)
+char	*ft_strjoin(const char *s1, const char *s2)
 {
 	size_t	len_s1;
 	size_t	len_s2;
-	char	*new_str;
+	char	*res;
 	size_t	i;
-	
+
+	if (!s1 || !s2)
+		return (NULL);
 	i = 0;
 	len_s1 = ft_strlen(s1);
 	len_s2 = ft_strlen(s2);
-	new_str = malloc((len_s1 + len_s2) * sizeof(char) + 1);
-	if (!new_str)
+	res = malloc((len_s1 + len_s2) * sizeof(char) + 1);
+	if (!res)
 		return (NULL);
 	while (i < len_s1)
 	{
-		new_str[i] = *s1;
-		s1++;
+		res[i] = s1[i];
 		i++;
 	}
 	while (i < len_s1 + len_s2)
 	{
-		new_str[i] = *s2;
-		s2++;
+		res[i] = s2[i - len_s1];
 		i++;
 	}
-	new_str[i] = '\0';
-	return (new_str);
+	res[i] = '\0';
+	return (res);
 }

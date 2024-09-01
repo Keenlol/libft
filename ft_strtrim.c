@@ -1,8 +1,19 @@
-#include "libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ctongpa <ctongpa@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/01 17:04:12 by ctongpa           #+#    #+#             */
+/*   Updated: 2024/09/01 17:04:38 by ctongpa          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "libft.h"
 #include <stdio.h>
 
-static int		is_in_set(const char c, const char *set)
+static int	is_in_set(const char c, const char *set)
 {
 	while (*set)
 	{
@@ -20,7 +31,7 @@ static size_t	len_final(const char *s1, const char *set)
 	size_t	i;
 
 	i = 0;
-	while (*s1 && is_in_set(*s1,set))
+	while (*s1 && is_in_set(*s1, set))
 		s1++;
 	while (*s1)
 	{
@@ -28,7 +39,7 @@ static size_t	len_final(const char *s1, const char *set)
 		i++;
 	}
 	s1--;
-	while (*s1 && is_in_set(*s1,set))
+	while (*s1 && is_in_set(*s1, set))
 	{
 		if (i > 0)
 			i--;
@@ -41,8 +52,10 @@ char	*ft_strtrim(const char *s1, const char *set)
 {
 	char	*res;
 	size_t	len_final_str;
-	char    *start;
+	char	*start;
 
+	if (!s1)
+		return (NULL);
 	len_final_str = len_final(s1, set);
 	res = malloc(len_final_str * sizeof(char) + 1);
 	if (!res)
@@ -58,7 +71,6 @@ char	*ft_strtrim(const char *s1, const char *set)
 	*res = '\0';
 	return (start);
 }
-
 
 // int	main(void)
 // {

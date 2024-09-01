@@ -7,9 +7,7 @@ files 	   = ft_atoi \
 			 ft_isalpha \
 			 ft_isascii \
 			 ft_isdigit \
-			 ft_islower \
 			 ft_isprint \
-			 ft_isupper \
 			 ft_itoa \
 			 ft_memchr \
 			 ft_memcmp \
@@ -23,7 +21,6 @@ files 	   = ft_atoi \
 			 ft_split \
 			 ft_strchr \
 			 ft_strdup \
-			 ft_striteri \
 			 ft_strjoin \
 			 ft_strlcat \
 			 ft_strlcpy \

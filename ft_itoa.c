@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ctongpa <ctongpa@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/01 16:53:43 by ctongpa           #+#    #+#             */
+/*   Updated: 2024/09/01 16:53:59 by ctongpa          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
@@ -23,7 +34,7 @@ static int	f_len_all(int n)
 	return (len);
 }
 
-static char *the_actual_itoa(long nbr, int len_all, char *res)
+static char	*the_actual_itoa(long nbr, int len_all, char *res)
 {
 	int	i;
 
@@ -44,10 +55,10 @@ static char *the_actual_itoa(long nbr, int len_all, char *res)
 		nbr /= 10;
 	}
 	res[len_all] = '\0';
-	return(res);
+	return (res);
 }
 
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	char	*res;
 	int		len_all;
