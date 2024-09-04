@@ -36,25 +36,23 @@ static int	f_len_all(int n)
 
 static char	*the_actual_itoa(long nbr, int len_all, char *res)
 {
-	int	i;
-
 	res[0] = '0';
 	if (nbr < 0)
 	{
 		nbr *= -1;
 		res[0] = '-';
 	}
-	i = len_all - 1;
-	while (i >= 0 && nbr != 0)
+	res[len_all] = '\0';
+	len_all--;
+	while (len_all >= 0 && nbr != 0)
 	{
 		if (nbr < 10)
-			res[i] = nbr + '0';
+			res[len_all] = nbr + '0';
 		else
-			res[i] = (nbr % 10) + '0';
-		i--;
+			res[len_all] = (nbr % 10) + '0';
+		len_all--;
 		nbr /= 10;
 	}
-	res[len_all] = '\0';
 	return (res);
 }
 

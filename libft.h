@@ -13,6 +13,12 @@
 #include <string.h>
 #include <stdlib.h>
 
+typedef struct		s_list
+{
+    void			*content;
+    struct s_list	*next;
+}					t_list;
+
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t count, size_t size);
@@ -37,6 +43,7 @@ char	*ft_strdup(const char *s1);
 char	**ft_split(const char *s, char c);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s1);
+void	ft_striteri(char *s, void (*f)(unsigned int,char*));
 char	*ft_strjoin(const char *s1, const char *s2);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
@@ -49,3 +56,5 @@ char	*ft_strtrim(const char *s1, const char *set);
 char	*ft_substr(const char *s, unsigned int start, size_t len);
 size_t	ft_tolower(int c);
 size_t	ft_toupper(int c);
+
+
