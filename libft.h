@@ -6,18 +6,18 @@
 /*   By: ctongpa <ctongpa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 17:09:59 by ctongpa           #+#    #+#             */
-/*   Updated: 2024/09/01 17:10:45 by ctongpa          ###   ########.fr       */
+/*   Updated: 2024/09/08 10:14:32 by ctongpa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdlib.h>
 
-typedef struct		s_list
+typedef struct s_list
 {
-    void			*content;
-    struct s_list	*next;
-}					t_list;
+	void			*content;
+	struct s_list	*next;
+}				t_list;
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
@@ -43,7 +43,7 @@ char	*ft_strdup(const char *s1);
 char	**ft_split(const char *s, char c);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s1);
-void	ft_striteri(char *s, void (*f)(unsigned int,char*));
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_strjoin(const char *s1, const char *s2);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
