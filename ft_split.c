@@ -12,6 +12,20 @@
 
 #include "libft.h"
 
+char	**free_all(char **res, size_t word_count)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < word_count)
+	{
+		free(res[i]);
+		i++;
+	}
+	free(res);
+	return (NULL);
+}
+
 static size_t	f_word_count(const char *s, char c)
 {
 	size_t	count;
@@ -33,7 +47,7 @@ static size_t	f_word_count(const char *s, char c)
 	return (count);
 }
 
-static char	**fill_in(const char *s, char c, char **res)
+static char	**fill_in(const char *s, char c, char **res, size_t word_count)
 {
 	size_t	i;
 	size_t	word_len;
@@ -48,7 +62,7 @@ static char	**fill_in(const char *s, char c, char **res)
 				word_len++;
 			res[i] = malloc((word_len + 1) * sizeof(char));
 			if (!res[i])
-				return (NULL);
+				return (free_all(res, word_count));
 			ft_strlcpy(res[i], s, word_len + 1);
 			s += word_len;
 			i++;
@@ -71,6 +85,6 @@ char	**ft_split(const char *s, char c)
 	res = malloc((word_count + 1) * sizeof(char *));
 	if (!res)
 		return (NULL);
-	res = fill_in(s, c, res);
+	res = fill_in(s, c, res, word_count);
 	return (res);
 }
