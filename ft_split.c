@@ -6,18 +6,18 @@
 /*   By: ctongpa <ctongpa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 16:57:10 by ctongpa           #+#    #+#             */
-/*   Updated: 2024/09/01 17:09:38 by ctongpa          ###   ########.fr       */
+/*   Updated: 2024/09/14 09:59:56 by ctongpa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**free_all(char **res, size_t word_count)
+char	**free_all(char **res, size_t current_word_count)
 {
 	size_t	i;
 
 	i = 0;
-	while (i < word_count)
+	while (i < current_word_count)
 	{
 		free(res[i]);
 		i++;
@@ -47,7 +47,7 @@ static size_t	f_word_count(const char *s, char c)
 	return (count);
 }
 
-static char	**fill_in(const char *s, char c, char **res, size_t word_count)
+static char	**fill_in(const char *s, char c, char **res)
 {
 	size_t	i;
 	size_t	word_len;
@@ -62,7 +62,7 @@ static char	**fill_in(const char *s, char c, char **res, size_t word_count)
 				word_len++;
 			res[i] = malloc((word_len + 1) * sizeof(char));
 			if (!res[i])
-				return (free_all(res, word_count));
+				return (free_all(res, i + 1));
 			ft_strlcpy(res[i], s, word_len + 1);
 			s += word_len;
 			i++;
@@ -85,6 +85,6 @@ char	**ft_split(const char *s, char c)
 	res = malloc((word_count + 1) * sizeof(char *));
 	if (!res)
 		return (NULL);
-	res = fill_in(s, c, res, word_count);
+	res = fill_in(s, c, res);
 	return (res);
 }
