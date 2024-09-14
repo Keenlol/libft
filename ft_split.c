@@ -6,13 +6,13 @@
 /*   By: ctongpa <ctongpa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 16:57:10 by ctongpa           #+#    #+#             */
-/*   Updated: 2024/09/14 09:59:56 by ctongpa          ###   ########.fr       */
+/*   Updated: 2024/09/14 16:53:39 by ctongpa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**free_all(char **res, size_t current_word_count)
+static char	**free_all(char **res, size_t current_word_count)
 {
 	size_t	i;
 

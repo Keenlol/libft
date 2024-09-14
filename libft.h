@@ -6,7 +6,7 @@
 /*   By: ctongpa <ctongpa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 17:09:59 by ctongpa           #+#    #+#             */
-/*   Updated: 2024/09/08 10:14:32 by ctongpa          ###   ########.fr       */
+/*   Updated: 2024/09/14 16:54:19 by ctongpa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strtrim(const char *s1, const char *set);
 char	*ft_substr(const char *s, unsigned int start, size_t len);
-size_t	ft_tolower(int c);
-size_t	ft_toupper(int c);
+int		ft_tolower(int c);
+int		ft_toupper(int c);
 
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);

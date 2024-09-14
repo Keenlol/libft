@@ -6,7 +6,7 @@
 /*   By: ctongpa <ctongpa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 17:02:21 by ctongpa           #+#    #+#             */
-/*   Updated: 2024/09/01 17:04:03 by ctongpa          ###   ########.fr       */
+/*   Updated: 2024/09/14 16:27:13 by ctongpa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strrchr(const char *s, int c)
 			last_appear = (char *)s;
 		s++;
 	}
-	if (c == 0)
-		return ((char *)s);
+	if (*s == c_char)
+		last_appear = (char *)s;
 	return (last_appear);
 }

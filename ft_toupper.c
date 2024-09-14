@@ -6,15 +6,15 @@
 /*   By: ctongpa <ctongpa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 17:05:15 by ctongpa           #+#    #+#             */
-/*   Updated: 2024/09/01 17:05:17 by ctongpa          ###   ########.fr       */
+/*   Updated: 2024/09/14 16:54:17 by ctongpa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_toupper(int c)
+int	ft_toupper(int c)
 {
 	if (97 <= c && c <= 122)
 		c -= 32;
-	return ((size_t) c);
+	return (c);
 }
