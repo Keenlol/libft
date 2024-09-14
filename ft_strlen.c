@@ -6,7 +6,7 @@
 /*   By: ctongpa <ctongpa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 11:54:48 by ctongpa           #+#    #+#             */
-/*   Updated: 2024/09/01 17:00:12 by ctongpa          ###   ########.fr       */
+/*   Updated: 2024/09/08 11:48:15 by ctongpa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 size_t	ft_strlen(const char *s)
 {
-	size_t	len;
+	const char	*tmp_s;
 
-	len = 0;
-	while (s[len] != 0)
-		len++;
-	return (len);
+	tmp_s = s;
+	while (*tmp_s)
+		tmp_s++;
+	return (tmp_s - s);
 }
